@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script>
+    let token = '{{ csrf_token }}'
+</script>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/recommend.js' %}"></script>
+<link type="text/css" href="{% static 'css/main.css' %}" rel="stylesheet">
+
+<!--Google Maps Javascript API-->
+
+<h1> Movie Recommendation </h1>
+
+<h2> Recommendation Part </h2>
+
+<div id="recommend_input_zone" class="col-mid-6">
+    <div class="location_zone"></div>
+    <div class="time_zone"></div>
+    <button class="submit_search">Submit</button>
+</div>
+
+<div id="recommend_result_zone" class="col-mid-6">
+    <h3 class="result_topic_zone"></h3>
+    <h4 class="result_comment_zone"></h4>
+    <div class="recommend_lines"></div>
+    <div class="clear_button_zone"></div>
+</div>
+
+{% endblock %}

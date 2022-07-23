@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script>
+    let token = '{{ csrf_token }}'
+</script>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+<link type="text/css" href="{% static 'css/main.css' %}" rel="stylesheet">
+
+<!--Google Maps Javascript API-->
+
+<h1> Movie Recommendation </h1>
+
+<h2> Search Part </h2>
+
+<div id="search_input_zone" class="col-mid-6">
+    <div class="title_zone">
+        <span>Title: </span>
+        <input type="search" name="title" placeholder="Title" required id="title_input">
+    </div>
+    <div class="location_zone"></div>
+    <div class="time_zone"></div>
+    <button class="submit_search">Submit</button>
+</div>
+
+<div id="search_result_zone" class="col-mid-6">
+    <h3 class="result_topic_zone"></h3>
+    <h4 class="result_comment_zone"></h4>
+    <h3 class="score_zone"></h3>
+    <div class="clear_button_zone"></div>
+</div>
+<!--<div id="map">-->
+<!--&lt;!&ndash;    <script type="text/javascript" async defer&ndash;&gt;-->
+<!--&lt;!&ndash;            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh9ta-V910wDYj2eHFo1dDNtEiHj8YMAY&callback=initMap"></script>&ndash;&gt;-->
+<!--    <script async-->
+<!--            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh9ta-V910wDYj2eHFo1dDNtEiHj8YMAY&libraries=geometry&callback=initMap">-->
+<!--    </script>-->
+<!--</div>-->
+
+<!--async-->
+
+<!--<form method="get" action="/search/">-->
+<!--    &lt;!&ndash; {% csrf_token %} &ndash;&gt;-->
+<!--    <input type="search" name="title" placeholder="title" required>-->
+
+<!--    &lt;!&ndash; Geo info: longitude and latitute, radius &ndash;&gt;-->
+<!--    &lt;!&ndash; New York: Google map API  &ndash;&gt;-->
+<!--    <input type="search" name="location" placeholder="location" required>-->
+
+<!--    &lt;!&ndash; the end time is current time, this time here is duration (back) indicator &ndash;&gt;-->
+<!--    <input type="search" name="time" placeholder="time" required>-->
+<!--    <button type="submit"> Search </button>-->
+<!--</form>-->
+
+<!--{% if error_msg %}-->
+<!--    <p>{{ error_msg }}</p>-->
+<!--{% endif %}-->
+
+<!--{% for result in results %}-->
+<!--    <p> {{ result }}</p>-->
+<!--{% endfor %}-->
+
+{% endblock %}
